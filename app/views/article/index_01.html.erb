@@ -12,30 +12,30 @@
     <%# <% raise articles.articles_ary.inspect %>
     <!-- タスクカード -->
     <section class="ly_card_wrapper">
-      <% huga.each do |onekiji| %>
+      <% articles.articles_ary.each do |article| %>
         <h2 class="el_card_lgtm_count">
           LGTM：
-          <%= onekiji.lgtm_count %>
+          <%= article[0] %>
         </h2>
         <div class="el_card_date">
           <ul>
             <li>
               投稿日：
               <%# <%= articles.created_at.strftime("%Y/%m/%d %H:%M") %>
-              <%= onekiji.created_at %>
+              <%= article[1] %>
             </li>
             <li>
               更新日：
-              <%= onekiji.updated_at %>
+              <%= article[2] %>
             </li>
           </ul>
         </div>
         <div class="el_card_title">
-          <%= onekiji.title %>
+          <%= article[3] %>
         </div>
 
         <div class="el_tag_name">
-          タグ1 タグ2
+          <%= article[4] %>
         </div>
       <% end %>
     </section><!-- /ly_card_wrapper -->

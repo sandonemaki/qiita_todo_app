@@ -15,23 +15,23 @@
       <% huga.each do |onekiji| %>
         <h2 class="el_card_lgtm_count">
           LGTM：
-          <%= onekiji.lgtm_count %>
+          <%= onekiji["LGTM"] %>
         </h2>
         <div class="el_card_date">
           <ul>
             <li>
               投稿日：
               <%# <%= articles.created_at.strftime("%Y/%m/%d %H:%M") %>
-              <%= onekiji.created_at %>
+              <%= onekiji["投稿日"] %>
             </li>
             <li>
               更新日：
-              <%= onekiji.updated_at %>
+              <%= onekiji["更新日"] %>
             </li>
           </ul>
         </div>
         <div class="el_card_title">
-          <%= onekiji.title %>
+          <%= onekiji["タイトル"] %>
         </div>
 
         <div class="el_tag_name">
