@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QiitaReadList</title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <header class="ly_header">
+    <div class="ly_header_inner">
+      <h1 class="bl_logo__head">
+        <a href="/">
+          <img src="/todo_logo.png" alt="1line to do list" class="bl_logo__img">
+        </a>
+      </h1><!-- /bl_logo__head -->
+      <!-- ヘッダーナビ -->
+      <div class="ly_header_nav">
+        <ul class="bl_header_nav">
+          <li class="el_header_navitem">
+            <%= link_to("記事一覧", "/") %>
+          </li>
+          <li class="el_header_navitem">
+            <%= link_to("ストック記事", "#") %>
+          </li>
+        </ul>
+
+
+
+        </ul><!-- /bl_header_nav-->
+      </div><!-- /ly_header_nav -->
+    </div><!-- /ly_header_inner -->
+  </header>
+
+  <body>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>

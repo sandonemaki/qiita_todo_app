@@ -1,0 +1,45 @@
+<!-- メインコンテンツ -->
+<main class="ly_main">
+  <div class="ly_card_article">
+    <div class="bl_maintitle">
+      <h1 class="el_lv1hedding">
+        Qiita記事一覧
+      </h1>
+    </div><!--bl_maintitle-->
+
+    <%# <% raise articles.inspect %>
+    <%# <% raise articles_ary.articles_ary.inspect %>
+    <%# <% raise articles.articles_ary.inspect %>
+    <!-- タスクカード -->
+    <section class="ly_card_wrapper">
+      <% articles.articles_ary.each do |article| %>
+        <h2 class="el_card_lgtm_count">
+          LGTM：
+          <%= article[0] %>
+        </h2>
+        <div class="el_card_date">
+          <ul>
+            <li>
+              投稿日：
+              <%# <%= articles.created_at.strftime("%Y/%m/%d %H:%M") %>
+              <%= article[1] %>
+            </li>
+            <li>
+              更新日：
+              <%= article[2] %>
+            </li>
+          </ul>
+        </div>
+        <div class="el_card_title">
+          <%= article[3] %>
+        </div>
+
+        <div class="el_tag_name">
+          <%= article[4] %>
+        </div>
+      <% end %>
+    </section><!-- /ly_card_wrapper -->
+  </div><!-- /ly_card_article -->
+</main><!-- /ly_main -- >
+
+<footer>
